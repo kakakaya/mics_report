@@ -6,6 +6,11 @@ MICS Report Template
 * rake
 * jlisting.sty
 
+# Edit Title page
+```
+$ emacs config/title.yml
+```
+
 # Init workspace
 ```
 $ rake init
@@ -27,9 +32,15 @@ or
 $ rake
 ```
 
-# Edit Title page
+If stopped, try
 ```
-$ vim config/title.yml
+$ rake --trace
+```
+and if it stopped while make_pdf, then try below.
+
+# Debug TeX error
+```
+$ rake make_pdf_debug
 ```
 
 # Add source codes to TeX file
@@ -38,5 +49,5 @@ $ vim config/title.yml
 
 
 # Add .png files to TeX file
-* put .png file in `images` directory
+* put {*.png, *.jpg, *.eps} file in `images` directory
 * inject `\includegraphics[width=5cm]{filename.png}` into where you want to attach it
